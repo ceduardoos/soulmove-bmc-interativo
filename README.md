@@ -32,5 +32,5 @@ automaticamente, usando o comando de build `npm run build` e a pasta de saida
 
 ## Entregaveis
 
-As versoes finais em PDF, PNG 4K e SVG editavel foram preparadas para inclusao
-no material academico. A matriz vetorial SVG acompanha este repositorio.
+As versoes finais em PDF, PNG 4K e SVG editavel foram preparadas localmente para
+inclusao no material academico.
