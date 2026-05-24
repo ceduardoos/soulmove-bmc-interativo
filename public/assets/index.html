@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071a31" />
+    <title>Assets | SoulMove</title>
+    <style>
+      :root {
+        color: #eff8fb;
+        font-family: Aptos, "Segoe UI", Arial, sans-serif;
+        background: #06172d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 80% 10%, rgba(15, 183, 202, 0.15), transparent 32%),
+          radial-gradient(circle at 15% 82%, rgba(240, 174, 54, 0.13), transparent 31%),
+          #06172d;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: minmax(240px, 320px) minmax(280px, 440px);
+        align-items: center;
+        justify-content: center;
+        gap: clamp(1.5rem, 5vw, 4.5rem);
+        min-height: 100vh;
+        padding: clamp(1.2rem, 4vw, 3.5rem);
+      }
+
+      .image-card {
+        width: min(100%, 320px);
+        justify-self: end;
+        overflow: hidden;
+        border: 1px solid rgba(18, 204, 219, 0.36);
+        border-radius: 28px;
+        background: #0a2138;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.34);
+      }
+
+      .image-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .eyebrow {
+        margin: 0 0 1rem;
+        color: #10c7d8;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0 0 0.8rem;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1;
+        letter-spacing: -0.055em;
+      }
+
+      .description {
+        margin: 0 0 2rem;
+        color: rgba(239, 248, 251, 0.74);
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .url-label {
+        display: block;
+        margin-bottom: 0.45rem;
+        color: rgba(239, 248, 251, 0.58);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .url {
+        display: block;
+        overflow-wrap: anywhere;
+        border: 1px solid rgba(18, 204, 219, 0.2);
+        border-radius: 14px;
+        margin-bottom: 1.35rem;
+        padding: 0.9rem 1rem;
+        color: #96eef5;
+        background: rgba(11, 42, 63, 0.72);
+        font-size: 0.9rem;
+        line-height: 1.45;
+        text-decoration: none;
+      }
+
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+      }
+
+      .button {
+        border-radius: 999px;
+        padding: 0.85rem 1.15rem;
+        color: #06172d;
+        background: #12ccdb;
+        font-size: 0.9rem;
+        font-weight: 650;
+        text-decoration: none;
+        transition: transform 160ms ease, background 160ms ease;
+      }
+
+      .button.secondary {
+        border: 1px solid rgba(239, 248, 251, 0.22);
+        color: #eff8fb;
+        background: transparent;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translateY(-1px);
+        outline: none;
+      }
+
+      footer {
+        margin-top: 2.2rem;
+        color: rgba(239, 248, 251, 0.44);
+        font-size: 0.76rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 860px) {
+        main {
+          grid-template-columns: minmax(0, 440px);
+        }
+
+        .image-card {
+          justify-self: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <figure class="image-card">
+        <img
+          src="/assets/solara-soulmove-avatar.jpg"
+          alt="Solara, assistente virtual do SoulMove, em cenário de mobilidade sustentável."
+        />
+      </figure>
+      <section aria-label="Detalhes do asset">
+        <p class="eyebrow">SoulMove / Assets</p>
+        <h1>Solara</h1>
+        <p class="description">
+          Avatar público da assistente virtual do SoulMove, otimizado para uso
+          em integrações, protótipos e configurações do web chat.
+        </p>
+        <span class="url-label">URL direta da imagem</span>
+        <a class="url" href="/assets/solara-soulmove-avatar.jpg">
+          https://soulmove-bmc-interativo.vercel.app/assets/solara-soulmove-avatar.jpg
+        </a>
+        <div class="buttons">
+          <a class="button" href="/assets/solara-soulmove-avatar.jpg">Abrir imagem</a>
+          <a class="button secondary" href="/">Voltar ao Canvas</a>
+        </div>
+        <footer>SoulMove • Asset library • Sprint de IA</footer>
+      </section>
+    </main>
+  </body>
+</html>
