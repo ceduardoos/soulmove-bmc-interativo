@@ -1,4 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
+import { ExternalLink } from 'lucide-react'
+import './solara-invite.css'
 
 const SCRIPT_ID = 'solara-watson-web-chat'
 const CHAT_OPTIONS = {
@@ -9,6 +12,27 @@ const CHAT_OPTIONS = {
 
 export default function SolaraWebChat() {
   const staticView = new URLSearchParams(window.location.search).has('static')
+  const [inviteTarget, setInviteTarget] = useState(null)
+
+  useEffect(() => {
+    if (staticView) {
+      return undefined
+    }
+
+    const target = document.querySelector('.detail-note')
+    const panel = target?.closest('.detail-panel')
+
+    if (target && panel) {
+      target.classList.add('detail-note--solara')
+      panel.classList.add('detail-panel--solara')
+      setInviteTarget(target)
+    }
+
+    return () => {
+      target?.classList.remove('detail-note--solara')
+      panel?.classList.remove('detail-panel--solara')
+    }
+  }, [staticView])
 
   useEffect(() => {
     if (staticView) {
@@ -37,5 +61,31 @@ export default function SolaraWebChat() {
     return undefined
   }, [staticView])
 
-  return null
+  if (!inviteTarget || staticView) {
+    return null
+  }
+
+  return createPortal(
+    <section className="solara-invite" aria-label="Experiência completa da Solara">
+      <p className="solara-overline">Assistente virtual • Solara</p>
+      <h3>Quer testar a experiência completa?</h3>
+      <p>
+        No webchat, tire dúvidas sobre o SoulMove e sua experiência na Soul Up.
+      </p>
+      <p>
+        Para simular uma jornada de ônibus, testar áudio e receber respostas
+        por voz, fale com a Solara no Telegram.
+      </p>
+      <a
+        className="telegram-link"
+        href="https://t.me/SolaraSoulMoveBot"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Conversar no Telegram
+        <ExternalLink aria-hidden="true" />
+      </a>
+    </section>,
+    inviteTarget,
+  )
 }
